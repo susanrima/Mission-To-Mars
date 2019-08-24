@@ -11,28 +11,28 @@
 
 <body>
 <!-- News -->
-    <div class="container-fluid">
-        <div class="jumbotron text-center">
-          <h1><b>Mission to Mars</b></h1>
+    <div class="container">
+        <div class="jumbotron text-center" style="background-image: url(https://media.wired.com/photos/5b4908609b49ed66c9b48475/16:9/w_2213,c_limit/SPoW_07_13_2018_2.jpg); background-size: 100% 100%;">
+          <h1 style="color: rgb(241, 233, 233);"><b>Mission to Mars</b></h1>
             
           <p></p>
-          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+          <p><h5><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></h5></p>
         </div>
 
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-8">
 			<h2 class="text-left">
 				<b>Latest Mars News</b>
 			</h2>
-			<blockquote class="blockquote">
+			
 				<p class="mb-0">
-					{{ mars.MarsNews.news_title }}
+					<b>{{ mars.MarsNews.news_title }}</b>
 				</p>
 				<footer class="blockquote-footer">
 					{{ mars.MarsNews.news_p }} 
 				</footer>
-			</blockquote>
+			
 		</div>
   </div>
   <!-- Featured Image -->
@@ -40,7 +40,7 @@
 		<div class="col-md-8">
 			<h2>
 				<b>Featured Mars Image</b>
-			</h2><img alt="Bootstrap Image Preview" src="{{ mars.FeaturedImage }}" />
+			</h2><img class="img-responsive" alt="Bootstrap Image Preview" src="{{ mars.FeaturedImage }}" />
     </div>
     <!-- Mars Weather -->
     <div class="col-md-4 ">
