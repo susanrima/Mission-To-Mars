@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- News -->
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+          <h1><b>Mission to Mars</b></h1>
+            
+          <p></p>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-left">
+				<b>Latest Mars News</b>
+			</h2>
+			<blockquote class="blockquote">
+				<p class="mb-0">
+					{{ mars.MarsNews.news_title }}
+				</p>
+				<footer class="blockquote-footer">
+					{{ mars.MarsNews.news_p }} 
+				</footer>
+			</blockquote>
+		</div>
+  </div>
+  <!-- Featured Image -->
+	<div class="row">
+		<div class="col-md-8">
+			<h2>
+				<b>Featured Mars Image</b>
+			</h2><img alt="Bootstrap Image Preview" src="{{ mars.FeaturedImage }}" />
+    </div>
+    <!-- Mars Weather -->
+    <div class="col-md-4 ">
+        <div class="card box-shadow well">
+          <h4 class="card-header">
+            <b>Current Weather On Mars</b>
+          </h4>
+          <div class="card-body">
+            <p class="card-text">
+              {{ mars.MarsWeather}}
+            </p>
+          </div>
+          <div class="card-footer">
+            
+          </div>
+        </div>
+    <!-- Facts -->
+         <h4 class="card-header">
+            <b>Mars Facts</b>
+          </h4>
+		<table>
+        <table class="table">
+            
+      {{ mars.MarsFacts | safe }}
+    </table> 
+			
+		</div>
+  </div>
+  <!-- Hemispheres -->
+  <h2 style="padding-top: 50px; margin-top: 100px; text-align: center;"><b>Mars Hemispheres</b></h2>
+        <div class="card-deck">
+            <hr>
+            <div class="col-md-12">
+                <div class="row">
+                    {% for item in mars.MarsHemispheres %}
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark" style="margin: 30px;">
+                            <img class="card-img-top img-responsive" src="{{ item.img_url }}" />
+                            <div class="card-body">
+
+                                <p class="card-text"><h3><b>{{ item.title }}</b></h3></p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+	
+
+	
+	
+</div>
+
+
+
+</body>
+
+</html>
